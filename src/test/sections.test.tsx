@@ -57,12 +57,16 @@ describe("rendu des sections (fr)", () => {
       expect(screen.getByText(pillar.title)).toBeInTheDocument();
     }
     expect(screen.getAllByText("Active Directory / GPO").length).toBeGreaterThan(0);
-    expect(fr.expertise.tools[0].items).toContain("SentinelOne");
+    expect(fr.expertise.tools[0].items.map((item) => item.label)).toContain("SentinelOne");
     for (const group of fr.expertise.tools) {
       expect(screen.getByText(group.label)).toBeInTheDocument();
+      for (const item of group.items) {
+        // Logo ou monogramme, toujours nommé pour les lecteurs d’écran
+        expect(screen.getByRole("img", { name: item.label })).toBeInTheDocument();
+      }
     }
-    expect(screen.getByText("Sekoia XDR")).toBeInTheDocument();
-    expect(screen.getByText("EasyRedmine")).toBeInTheDocument();
+    expect(screen.getByRole("img", { name: "GitLab" }).tagName).toBe("svg");
+    expect(screen.getByRole("img", { name: "SentinelOne" })).toHaveTextContent("S1");
   });
 
   it("Expérience : les 5 postes avec période et monogramme d’organisation", () => {
@@ -77,8 +81,10 @@ describe("rendu des sections (fr)", () => {
     expect(screen.getByRole("img", { name: "PROWEBCE" })).toBeInTheDocument();
   });
 
-  it("Formation : diplômes et certification ONU", () => {
+  it("Formation : Master en cours, diplômes et certification ONU", () => {
     renderWith("fr", <Education />);
+    expect(fr.education.items).toHaveLength(3);
+    expect(fr.education.items[0].degree).toContain("Master");
     for (const item of fr.education.items) {
       expect(screen.getByText(item.degree)).toBeInTheDocument();
     }

@@ -15,4 +15,4 @@ export const monograms = {
 export type OrgKey = keyof typeof monograms;
 
 export const experienceOrgs: OrgKey[] = ["domplus", "domplus", "domplus", "domplus", "prowebce"];
-export const educationOrgs: OrgKey[] = ["cesi", "cesi"];
+export const educationOrgs: OrgKey[] = ["cesi", "cesi", "cesi"];

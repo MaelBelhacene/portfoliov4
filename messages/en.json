@@ -70,10 +70,34 @@
     "title": "Three pillars, one standard.",
     "toolsLabel": "Daily toolkit",
     "tools": [
-      { "label": "Detection & response", "items": ["SentinelOne", "Sekoia XDR", "Orange Cyberdéfense SOC"] },
-      { "label": "Infrastructure & access", "items": ["Active Directory / GPO", "Windows Server"] },
-      { "label": "Project & compliance", "items": ["EasyRedmine", "ISO 27001", "GDPR / CNIL"] },
-      { "label": "Development", "items": ["Laravel", "Node.js", "GitLab"] }
+      {
+        "label": "Detection & response",
+        "items": [
+          { "id": "sentinelone", "label": "SentinelOne" },
+          { "id": "sekoia", "label": "Sekoia XDR" },
+          { "id": "orange", "label": "Orange Cyberdéfense SOC" }
+        ]
+      },
+      {
+        "label": "Infrastructure & access",
+        "items": [{ "id": "activedirectory", "label": "Active Directory / GPO" }]
+      },
+      {
+        "label": "Project & compliance",
+        "items": [
+          { "id": "easyredmine", "label": "EasyRedmine" },
+          { "id": "iso27001", "label": "ISO 27001" },
+          { "id": "rgpd", "label": "GDPR / CNIL" }
+        ]
+      },
+      {
+        "label": "Development",
+        "items": [
+          { "id": "laravel", "label": "Laravel" },
+          { "id": "nodejs", "label": "Node.js" },
+          { "id": "gitlab", "label": "GitLab" }
+        ]
+      }
     ],
     "pillars": [
       {
@@ -130,6 +154,12 @@
     "label": "Education",
     "title": "Background & certification.",
     "items": [
+      {
+        "years": "2026 — 2028",
+        "degree": "Master’s degree, IT Infrastructure & Cybersecurity Management",
+        "school": "CESI",
+        "note": "In progress, apprenticeship at DOMPLUS Groupe."
+      },
       {
         "years": "2025 — 2026",
         "degree": "Bachelor’s degree, Systems & Network Administration",
