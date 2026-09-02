@@ -27,8 +27,15 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") === "en" ? "en" : "fr";
   const messages = locale === "en" ? en : fr;
-  // « Aligner la sécurité sur <em>le réel</em>. » → l’emphase passe en vermillon
+  // « Aligner la sécurité sur <em>le réel</em>. » → l’emphase passe en vermillon.
+  // Satori impose display:flex à tout conteneur multi-enfants : le titre est
+  // donc composé mot par mot, la ponctuation finale collée au dernier mot.
   const [before, emphasis = "", after = ""] = messages.hero.title.split(/<\/?em>/);
+  const words = [
+    ...before.trim().split(/\s+/).filter(Boolean).map((text) => ({ text, accent: false })),
+    ...emphasis.trim().split(/\s+/).filter(Boolean).map((text) => ({ text, accent: true })),
+  ];
+  const tail = after.trim();
   const eyebrow = messages.hero.eyebrow;
 
   const archivo = await loadArchivo();
@@ -79,17 +86,25 @@ export async function GET(request: Request) {
 
         <div
           style={{
-            display: "block",
+            display: "flex",
+            flexWrap: "wrap",
+            columnGap: 24,
+            rowGap: 4,
             fontSize: 96,
             lineHeight: 0.95,
             letterSpacing: -4,
             fontWeight: 700,
-            maxWidth: 960,
+            maxWidth: 1000,
           }}
         >
-          {before}
-          <span style={{ color: tokens.accent }}>{emphasis}</span>
-          {after}
+          {words.map((word, i) => (
+            <div key={i} style={{ display: "flex" }}>
+              <span style={{ color: word.accent ? tokens.accent : tokens.foreground }}>
+                {word.text}
+              </span>
+              {i === words.length - 1 && tail ? <span>{tail}</span> : null}
+            </div>
+          ))}
         </div>
 
         <div
