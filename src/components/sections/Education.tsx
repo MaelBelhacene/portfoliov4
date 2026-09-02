@@ -39,7 +39,7 @@ export default function Education() {
             <div className="flex gap-5 md:col-span-6">
               <Monogram org="un" />
               <div>
-                <p className="label text-ink-faint">{t("certLabel")}</p>
+                <p className="label text-ink-muted">{t("certLabel")}</p>
                 <h3 className="mt-3 text-heading font-semibold text-ink">
                   {t("cert.title")} — {t("cert.org")}
                 </h3>

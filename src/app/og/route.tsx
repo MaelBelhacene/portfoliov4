@@ -27,7 +27,8 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") === "en" ? "en" : "fr";
   const messages = locale === "en" ? en : fr;
-  const title = messages.hero.title.replace(/<\/?em>/g, "");
+  // « Aligner la sécurité sur <em>le réel</em>. » → l’emphase passe en vermillon
+  const [before, emphasis = "", after = ""] = messages.hero.title.split(/<\/?em>/);
   const eyebrow = messages.hero.eyebrow;
 
   const archivo = await loadArchivo();
@@ -78,14 +79,17 @@ export async function GET(request: Request) {
 
         <div
           style={{
+            display: "block",
             fontSize: 96,
             lineHeight: 0.95,
             letterSpacing: -4,
             fontWeight: 700,
-            maxWidth: 1000,
+            maxWidth: 960,
           }}
         >
-          {title}
+          {before}
+          <span style={{ color: tokens.accent }}>{emphasis}</span>
+          {after}
         </div>
 
         <div

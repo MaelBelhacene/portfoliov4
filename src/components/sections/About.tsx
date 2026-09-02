@@ -33,22 +33,20 @@ export default function About() {
         </div>
 
         <Reveal className="col-span-12">
-          <dl className="grid grid-cols-1 gap-x-6 border-t border-rule sm:grid-cols-3">
-            <div className="sr-only">{t("statsLabel")}</div>
+          <h3 className="sr-only">{t("statsLabel")}</h3>
+          <ul className="grid grid-cols-1 gap-x-6 border-t border-rule sm:grid-cols-3">
             {(["years", "ects", "areas"] as const).map((key, i) => (
-              <div
+              <li
                 key={key}
                 className={`py-8 ${i > 0 ? "border-t border-rule sm:border-t-0 sm:border-l sm:pl-6" : ""}`}
               >
-                <dd className="tnum order-first text-index font-bold text-ink">
+                <p className="tnum text-index font-bold text-ink">
                   <Counter value={stats[key].value} />
-                </dd>
-                <dt className="label mt-4 max-w-[22ch] text-ink-muted">
-                  {stats[key].label}
-                </dt>
-              </div>
+                </p>
+                <p className="label mt-4 max-w-[22ch] text-ink-muted">{stats[key].label}</p>
+              </li>
             ))}
-          </dl>
+          </ul>
         </Reveal>
       </div>
     </Section>

@@ -14,7 +14,7 @@ export default function Services() {
         {items.map((item, i) => (
           <li key={item.title} className="border-t border-rule pt-6">
             <Reveal delay={(i % 2) * 0.08}>
-              <p className="label tnum text-ink-faint">{String(i + 1).padStart(2, "0")}</p>
+              <p className="label tnum text-ink-muted">{String(i + 1).padStart(2, "0")}</p>
               <h3 className="mt-6 max-w-[18ch] text-heading font-semibold text-ink">
                 {item.title}
               </h3>
