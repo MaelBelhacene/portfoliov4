@@ -36,7 +36,8 @@ describe("rendu des sections (fr)", () => {
     renderWith("fr", <About />);
     expect(screen.getByRole("heading", { level: 2, name: fr.about.title })).toBeInTheDocument();
     expect(screen.getByText(fr.about.quote)).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: fr.about.portraitAlt })).toBeInTheDocument();
+    // Sans photo dans public/, le carton d’identité typographique prend sa place
+    expect(screen.getByRole("img", { name: fr.about.portraitFallback })).toBeInTheDocument();
     expect(screen.getByText(fr.about.stats.ects.label)).toBeInTheDocument();
     expect(screen.getByText("120")).toBeInTheDocument();
   });

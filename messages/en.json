@@ -33,6 +33,7 @@
     "title": "Understanding both worlds.",
     "quote": "I align security with reality: governance, compliance, and operational defense.",
     "portraitAlt": "Portrait of Mael Belhacene",
+    "portraitFallback": "Mael Belhacene, cybersecurity engineer in Grenoble",
     "p1": "As an apprentice cybersecurity engineer in the Security unit of DOMPLUS Groupe in Grenoble, I run security projects end to end. My ground: governance, risk and compliance — ISSP, GDPR, ISO 27001, security committees, third-party risk — and their very concrete translation into infrastructure and tooling.",
     "p2": "Before security, I was a lead developer: Sage X3 ERP, Laravel and Node.js applications, a ticketing platform built from scratch. That past gives me a rare angle — I know what a developer can break, and how a system is governed.",
     "p3": "Next heading: a Master’s degree in IT Infrastructure & Cybersecurity Management, with a thesis already underway on deploying Sekoia XDR.",
@@ -211,7 +212,7 @@
   "contact": {
     "label": "Contact",
     "title": "Let’s talk security.",
-    "lead": "An upcoming apprenticeship, a governance question, a project to frame or just a conversation — I reply quickly.",
+    "lead": "A governance question, a project to frame or just a conversation — I reply quickly.",
     "directLabel": "Direct email",
     "socialLabel": "Elsewhere",
     "cvLabel": "Download CV",

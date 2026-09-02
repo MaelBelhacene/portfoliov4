@@ -33,6 +33,7 @@
     "title": "Comprendre les deux mondes.",
     "quote": "J’aligne la sécurité sur le réel : gouvernance, conformité et défense opérationnelle.",
     "portraitAlt": "Portrait de Mael Belhacene",
+    "portraitFallback": "Mael Belhacene, ingénieur cybersécurité à Grenoble",
     "p1": "Ingénieur cybersécurité en alternance au pôle Sécurité de DOMPLUS Groupe, à Grenoble, je pilote des projets sécurité de bout en bout. Mon terrain : la gouvernance, le risque et la conformité — PSSI, RGPD, ISO 27001, comités sécurité, risque tiers — et leur traduction très concrète dans l’infrastructure et les outils.",
     "p2": "Avant la sécurité, j’ai été lead developer : ERP Sage X3, applications Laravel et Node.js, plateforme de ticketing construite from scratch. Ce passé me donne un angle rare — je sais ce qu’un développeur peut casser, et comment un système se gouverne.",
     "p3": "Cap suivant : le Master Manager en Infrastructures et Cybersécurité des SI, avec un mémoire déjà en cours sur le déploiement de Sekoia XDR.",
@@ -211,7 +212,7 @@
   "contact": {
     "label": "Contact",
     "title": "Parlons sécurité.",
-    "lead": "Alternance à venir, question de gouvernance, projet à cadrer ou simple échange — je réponds rapidement.",
+    "lead": "Question de gouvernance, projet à cadrer ou simple échange — je réponds rapidement.",
     "directLabel": "Email direct",
     "socialLabel": "Ailleurs",
     "cvLabel": "Télécharger le CV",

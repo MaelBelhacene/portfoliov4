@@ -17,7 +17,7 @@ export default function Contact() {
           <p className="label mt-12 text-ink-muted">{t("directLabel")}</p>
           <a
             href={`mailto:${site.email}`}
-            className="link-underline mt-3 inline-block font-display text-lead font-semibold text-accent [overflow-wrap:anywhere]"
+            className="link-underline mt-3 inline-block font-display text-body font-semibold text-accent"
           >
             {site.email}
           </a>

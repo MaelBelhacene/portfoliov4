@@ -14,7 +14,7 @@ export default function About() {
     <Section id="about" index="01" label={t("label")} title={t("title")} tone="alt">
       <div className="grid grid-cols-12 gap-x-6 gap-y-12">
         <Reveal className="col-span-8 sm:col-span-5 lg:col-span-4">
-          <Portrait alt={t("portraitAlt")} />
+          <Portrait />
         </Reveal>
 
         <div className="col-span-12 sm:col-span-7 lg:col-span-8 lg:pl-6">

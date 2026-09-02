@@ -39,10 +39,9 @@ Trois contextes lisent des valeurs littérales — image Open Graph, manifeste,
 Tout est centralisé dans `src/lib/site.ts` :
 
 - [ ] Domaine final (`url`, ou `NEXT_PUBLIC_SITE_URL`)
-- [ ] Email public (`email`)
 - [ ] CV : `public/cv-mael-belhacene.pdf`
 - [ ] Photo : `public/portrait-mael.(avif|webp|jpg|png)` — sans elle, un
-      fallback typographique est affiché
+      carton d’identité typographique est affiché à sa place
 - [ ] Variables Resend dans `.env.local` (voir `.env.example`)
 - [ ] Vrais SVG des organisations, si souhaité, à la place des monogrammes
       (`src/lib/orgs.ts`)
