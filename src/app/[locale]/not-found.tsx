@@ -1,8 +1,9 @@
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { useLocale, useTranslations } from "next-intl";
+import { localePath, type Locale } from "@/lib/seo";
 
 export default function NotFound() {
   const t = useTranslations("notFound");
+  const locale = useLocale() as Locale;
 
   return (
     <main id="main" className="band-surface">
@@ -15,9 +16,9 @@ export default function NotFound() {
           {t("description")}
         </p>
         <div className="col-span-12 mt-12">
-          <Link href="/" className="btn-primary">
+          <a href={localePath(locale)} className="btn-primary">
             {t("back")}
-          </Link>
+          </a>
         </div>
       </div>
     </main>

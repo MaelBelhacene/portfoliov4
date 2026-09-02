@@ -1,8 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { Archivo, IBM_Plex_Sans } from "next/font/google";
-import { hasLocale, NextIntlClientProvider } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import { hasLocale } from "next-intl";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { buildLocaleMetadata, type Locale } from "@/lib/seo";
 import { tokens } from "@/lib/tokens";
@@ -44,6 +44,10 @@ export const viewport: Viewport = {
   themeColor: tokens.surface,
 };
 
+/**
+ * Toutes les traductions sont résolues côté serveur : aucun
+ * NextIntlClientProvider, donc aucun runtime i18n dans le bundle client.
+ */
 export default async function LocaleLayout({
   children,
   params,
@@ -57,13 +61,6 @@ export default async function LocaleLayout({
   }
   setRequestLocale(locale);
 
-  // Seuls les espaces de noms utilisés côté client traversent la frontière
-  const messages = await getMessages();
-  const clientMessages = {
-    a11y: messages.a11y,
-    nav: messages.nav,
-    contact: { form: (messages.contact as { form: unknown }).form },
-  };
   const t = await getTranslations({ locale, namespace: "a11y" });
 
   return (
@@ -76,17 +73,15 @@ export default async function LocaleLayout({
         <noscript>
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
         </noscript>
-        <NextIntlClientProvider messages={clientMessages}>
-          <a
-            href="#main"
-            className="label sr-only z-[100] bg-accent px-4 py-3 text-on-accent focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
-          >
-            {t("skipLink")}
-          </a>
-          <Header />
-          {children}
-          <Footer />
-        </NextIntlClientProvider>
+        <a
+          href="#main"
+          className="label sr-only z-[100] bg-accent px-4 py-3 text-on-accent focus:not-sr-only focus:fixed focus:top-4 focus:left-4"
+        >
+          {t("skipLink")}
+        </a>
+        <Header />
+        {children}
+        <Footer />
       </body>
     </html>
   );

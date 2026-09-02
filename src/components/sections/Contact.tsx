@@ -1,11 +1,12 @@
 import { useTranslations } from "next-intl";
 import Section from "./Section";
-import ContactForm from "./ContactForm";
+import ContactForm, { type ContactFormLabels } from "./ContactForm";
 import Reveal from "@/components/ui/Reveal";
 import { site } from "@/lib/site";
 
 export default function Contact() {
   const t = useTranslations("contact");
+  const labels = t.raw("form") as ContactFormLabels;
 
   return (
     <Section id="contact" index="07" label={t("label")} title={t("title")} tone="alt">
@@ -51,7 +52,7 @@ export default function Contact() {
         </Reveal>
 
         <Reveal delay={0.08} className="lg:col-span-5">
-          <ContactForm />
+          <ContactForm labels={labels} />
         </Reveal>
       </div>
     </Section>

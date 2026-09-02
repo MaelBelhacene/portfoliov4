@@ -1,19 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
 
 type Status = "idle" | "sending" | "success" | "error";
 type FieldKey = "name" | "email" | "subject" | "message";
 
-const FIELDS: { key: FieldKey; type: "text" | "email"; autoComplete: string }[] = [
+/** Chaînes résolues côté serveur (Contact.tsx) — aucun runtime i18n côté client. */
+export type ContactFormLabels = Record<FieldKey, string> & {
+  submit: string;
+  sending: string;
+  success: string;
+  errorValidation: string;
+  errorUnconfigured: string;
+  errorGeneric: string;
+  fieldErrors: Record<FieldKey, string>;
+};
+
+const FIELDS: { key: Exclude<FieldKey, "message">; type: "text" | "email"; autoComplete: string }[] = [
   { key: "name", type: "text", autoComplete: "name" },
   { key: "email", type: "email", autoComplete: "email" },
   { key: "subject", type: "text", autoComplete: "off" },
 ];
 
-export default function ContactForm() {
-  const t = useTranslations("contact.form");
+export default function ContactForm({ labels }: { labels: ContactFormLabels }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Partial<Record<FieldKey, boolean>>>({});
@@ -57,15 +66,15 @@ export default function ContactForm() {
       setStatus("error");
       if (res.status === 422 && body.fields) {
         setFieldErrors(body.fields);
-        setErrorMsg(t("errorValidation"));
+        setErrorMsg(labels.errorValidation);
       } else if (res.status === 503) {
-        setErrorMsg(t("errorUnconfigured"));
+        setErrorMsg(labels.errorUnconfigured);
       } else {
-        setErrorMsg(t("errorGeneric"));
+        setErrorMsg(labels.errorGeneric);
       }
     } catch {
       setStatus("error");
-      setErrorMsg(t("errorGeneric"));
+      setErrorMsg(labels.errorGeneric);
     }
   }
 
@@ -88,7 +97,7 @@ export default function ContactForm() {
         {FIELDS.map(({ key, type, autoComplete }) => (
           <div key={key} className={key === "subject" ? "sm:col-span-2" : ""}>
             <label htmlFor={`contact-${key}`} className="label block text-ink-muted">
-              {t(key)}
+              {labels[key]}
             </label>
             <input
               id={`contact-${key}`}
@@ -102,7 +111,7 @@ export default function ContactForm() {
             />
             {fieldErrors[key] && (
               <p id={`contact-${key}-error`} className="mt-2 text-small text-accent">
-                {t(`fieldErrors.${key}`)}
+                {labels.fieldErrors[key]}
               </p>
             )}
           </div>
@@ -110,7 +119,7 @@ export default function ContactForm() {
 
         <div className="sm:col-span-2">
           <label htmlFor="contact-message" className="label block text-ink-muted">
-            {t("message")}
+            {labels.message}
           </label>
           <textarea
             id="contact-message"
@@ -123,7 +132,7 @@ export default function ContactForm() {
           />
           {fieldErrors.message && (
             <p id="contact-message-error" className="mt-2 text-small text-accent">
-              {t("fieldErrors.message")}
+              {labels.fieldErrors.message}
             </p>
           )}
         </div>
@@ -131,12 +140,12 @@ export default function ContactForm() {
 
       <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4">
         <button type="submit" disabled={status === "sending"} className="btn-primary">
-          {status === "sending" ? t("sending") : t("submit")}
+          {status === "sending" ? labels.sending : labels.submit}
         </button>
 
         <p role="status" aria-live="polite" className="text-small">
           {status === "success" && (
-            <span className="font-medium text-ink">{t("success")}</span>
+            <span className="font-medium text-ink">{labels.success}</span>
           )}
           {status === "error" && errorMsg && <span className="text-accent">{errorMsg}</span>}
         </p>
