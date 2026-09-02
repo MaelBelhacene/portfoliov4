@@ -50,10 +50,7 @@ export function buildPersonJsonLd(locale: Locale): string {
     "@context": "https://schema.org",
     "@type": "Person",
     name: site.name,
-    jobTitle:
-      locale === "en"
-        ? "IT Security Assistant · Security Project Lead"
-        : "IT Security Assistant · Chef de projet sécurité",
+    jobTitle: locale === "en" ? "Cybersecurity Engineer" : "Ingénieur cybersécurité",
     worksFor: { "@type": "Organization", name: "DOMPLUS Groupe" },
     address: {
       "@type": "PostalAddress",

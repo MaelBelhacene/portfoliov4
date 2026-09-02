@@ -50,24 +50,30 @@ describe("rendu des sections (fr)", () => {
     expect(screen.getByText("04")).toBeInTheDocument();
   });
 
-  it("Expertises : les 3 piliers, leurs items et les logos nommés", () => {
+  it("Expertises : les 3 piliers, leurs items et l’environnement quotidien cyber d’abord", () => {
     renderWith("fr", <Expertise />);
     expect(fr.expertise.pillars).toHaveLength(3);
     for (const pillar of fr.expertise.pillars) {
       expect(screen.getByText(pillar.title)).toBeInTheDocument();
     }
-    expect(screen.getByText("Active Directory / GPO")).toBeInTheDocument();
-    expect(screen.getByRole("img", { name: "GitLab" })).toBeInTheDocument();
+    expect(screen.getAllByText("Active Directory / GPO").length).toBeGreaterThan(0);
+    expect(fr.expertise.tools[0].items).toContain("SentinelOne");
+    for (const group of fr.expertise.tools) {
+      expect(screen.getByText(group.label)).toBeInTheDocument();
+    }
+    expect(screen.getByText("Sekoia XDR")).toBeInTheDocument();
+    expect(screen.getByText("EasyRedmine")).toBeInTheDocument();
   });
 
-  it("Expérience : les 4 postes avec période et monogramme d’organisation", () => {
+  it("Expérience : les 5 postes avec période et monogramme d’organisation", () => {
     renderWith("fr", <Experience />);
-    expect(fr.experience.items).toHaveLength(4);
+    expect(fr.experience.items).toHaveLength(5);
+    expect(fr.experience.items[0].role).toBe("Ingénieur cybersécurité");
     for (const role of fr.experience.items) {
       expect(screen.getByText(role.period)).toBeInTheDocument();
       expect(screen.getByText(role.role)).toBeInTheDocument();
     }
-    expect(screen.getAllByRole("img", { name: "DOMPLUS Groupe" })).toHaveLength(3);
+    expect(screen.getAllByRole("img", { name: "DOMPLUS Groupe" })).toHaveLength(4);
     expect(screen.getByRole("img", { name: "PROWEBCE" })).toBeInTheDocument();
   });
 

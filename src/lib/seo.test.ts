@@ -46,8 +46,8 @@ describe("buildPersonJsonLd", () => {
     const parsed = JSON.parse(buildPersonJsonLd("fr"));
     expect(parsed["@type"]).toBe("Person");
     expect(parsed.name).toBe("Mael Belhacene");
-    expect(parsed.jobTitle).toContain("Chef de projet sécurité");
-    expect(JSON.parse(buildPersonJsonLd("en")).jobTitle).toContain("Security Project Lead");
+    expect(parsed.jobTitle).toBe("Ingénieur cybersécurité");
+    expect(JSON.parse(buildPersonJsonLd("en")).jobTitle).toBe("Cybersecurity Engineer");
   });
 
   it("neutralise le caractère < pour éviter toute injection dans <script>", () => {

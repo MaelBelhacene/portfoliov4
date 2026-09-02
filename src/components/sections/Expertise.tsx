@@ -1,16 +1,14 @@
 import { useTranslations } from "next-intl";
-import { siGitlab, siLaravel, siMysql, siNodedotjs, siPhp } from "simple-icons";
 import Section from "./Section";
 import Reveal from "@/components/ui/Reveal";
 
 type Pillar = { title: string; items: string[] };
-
-/** Logos monochromes libres (Simple Icons, CC0) — rendus en SVG serveur, zéro JS. */
-const TOOLS = [siLaravel, siPhp, siNodedotjs, siMysql, siGitlab];
+type ToolGroup = { label: string; items: string[] };
 
 export default function Expertise() {
   const t = useTranslations("expertise");
   const pillars = t.raw("pillars") as Pillar[];
+  const tools = t.raw("tools") as ToolGroup[];
 
   return (
     <Section id="expertise" index="03" label={t("label")} title={t("title")} tone="inverse">
@@ -34,27 +32,25 @@ export default function Expertise() {
         ))}
       </div>
 
+      {/* Outils du quotidien, cyber d’abord — marques typographiques, aucun logo inventé */}
       <Reveal className="mt-16">
-        <p className="label text-ink-muted">{t("toolsLabel")}</p>
-        <ul className="mt-6 flex flex-wrap gap-x-10 gap-y-6">
-          {TOOLS.map((icon) => (
-            <li key={icon.slug} className="flex items-center gap-3 text-ink">
-              <svg
-                viewBox="0 0 24 24"
-                width="22"
-                height="22"
-                role="img"
-                aria-label={icon.title}
-                fill="currentColor"
-              >
-                <path d={icon.path} />
-              </svg>
-              <span aria-hidden="true" className="text-small text-ink-muted">
-                {icon.title}
-              </span>
-            </li>
+        <h3 className="label text-ink-muted">{t("toolsLabel")}</h3>
+        <dl className="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 border-t border-rule pt-8 sm:grid-cols-2 lg:grid-cols-4">
+          {tools.map((group) => (
+            <div key={group.label}>
+              <dt className="label text-ink-muted">{group.label}</dt>
+              <dd className="mt-3">
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item} className="font-display text-body font-medium text-ink">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </Reveal>
     </Section>
   );

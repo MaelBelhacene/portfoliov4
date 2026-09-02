@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Mael Belhacene — Cybersecurity · GRC · Secure Development",
-    "description": "I align security with reality: governance, compliance, and operational defense. Portfolio of Mael Belhacene, cybersecurity engineer in the making — Grenoble, France."
+    "description": "I align security with reality: governance, compliance, and operational defense. Portfolio of Mael Belhacene, cybersecurity engineer at DOMPLUS Groupe — Grenoble, France."
   },
   "a11y": {
     "skipLink": "Skip to content",
@@ -23,8 +23,8 @@
   "hero": {
     "eyebrow": "Cybersecurity · GRC · Secure Development",
     "title": "Aligning security with <em>reality</em>.",
-    "subtitle": "Security project lead at DOMPLUS Groupe — governance, compliance, and operational defense, with a lead-developer background.",
-    "roleLine": "Security project lead (apprenticeship) · DOMPLUS Groupe",
+    "subtitle": "Cybersecurity engineer at DOMPLUS Groupe — security project management, compliance, and operational defense, with a lead-developer background.",
+    "roleLine": "Cybersecurity engineer (apprenticeship) · DOMPLUS Groupe",
     "ctaProjects": "View my work",
     "ctaContact": "Get in touch"
   },
@@ -33,7 +33,7 @@
     "title": "Understanding both worlds.",
     "quote": "I align security with reality: governance, compliance, and operational defense.",
     "portraitAlt": "Portrait of Mael Belhacene",
-    "p1": "A cybersecurity engineer in the making, I currently work as a security project lead (apprenticeship) at DOMPLUS Groupe in Grenoble. My ground: governance, risk and compliance — ISSP, GDPR, security committees, third-party risk — and their very concrete translation into infrastructure and tooling.",
+    "p1": "As an apprentice cybersecurity engineer in the Security unit of DOMPLUS Groupe in Grenoble, I run security projects end to end. My ground: governance, risk and compliance — ISSP, GDPR, ISO 27001, security committees, third-party risk — and their very concrete translation into infrastructure and tooling.",
     "p2": "Before security, I was a lead developer: Sage X3 ERP, Laravel and Node.js applications, a ticketing platform built from scratch. That past gives me a rare angle — I know what a developer can break, and how a system is governed.",
     "p3": "Next heading: a Master’s degree in IT Infrastructure & Cybersecurity Management, with a thesis already underway on deploying Sekoia XDR.",
     "statsLabel": "Key figures",
@@ -49,7 +49,7 @@
     "items": [
       {
         "title": "Governance, risk & compliance",
-        "desc": "ISSP, GDPR compliance built on CNIL and ANSSI frameworks, security committees, third-party risk management, internal audit — governance that holds up in the reality of teams."
+        "desc": "ISSP, GDPR compliance built on CNIL and ANSSI frameworks, security committees, third-party risk management, internal and ISO 27001 audits — governance that holds up in the reality of teams."
       },
       {
         "title": "Operational security & defense",
@@ -69,14 +69,20 @@
     "label": "Expertise",
     "title": "Three pillars, one standard.",
     "toolsLabel": "Daily toolkit",
+    "tools": [
+      { "label": "Detection & response", "items": ["SentinelOne", "Sekoia XDR", "Orange Cyberdéfense SOC"] },
+      { "label": "Infrastructure & access", "items": ["Active Directory / GPO", "Windows Server"] },
+      { "label": "Project & compliance", "items": ["EasyRedmine", "ISO 27001", "GDPR / CNIL"] },
+      { "label": "Development", "items": ["Laravel", "Node.js", "GitLab"] }
+    ],
     "pillars": [
       {
         "title": "Governance & compliance",
-        "items": ["ISSP", "GDPR", "CNIL / ANSSI frameworks", "Security committees", "Third-party risk", "Internal audit"]
+        "items": ["ISSP", "GDPR", "ISO 27001", "CNIL / ANSSI frameworks", "Security committees", "Third-party risk", "Internal audit"]
       },
       {
         "title": "Operational security",
-        "items": ["EDR / XDR", "Incident response", "Hardening", "Access management", "Active Directory / GPO", "BCP / DRP", "Awareness & phishing"]
+        "items": ["EDR / XDR", "Incident & crisis management", "Hardening", "Access management", "Active Directory / GPO", "BCP / DRP", "Awareness & phishing"]
       },
       {
         "title": "Secure development",
@@ -89,7 +95,13 @@
     "title": "From code to governance.",
     "items": [
       {
-        "period": "Jan. 2026 — today",
+        "period": "Sept. 2026 — today",
+        "role": "Cybersecurity Engineer",
+        "org": "DOMPLUS Groupe — apprenticeship, Security unit, Grenoble",
+        "desc": "Security project management: requirements gathering, specifications and technical architecture documents, coordination of internal teams and external partners. EDR/XDR operations, vulnerability watch, security and ISO 27001 audits, GPO and server administration. Member of the incident and crisis management cell, level 2/3 application support."
+      },
+      {
+        "period": "Jan. — Aug. 2026",
         "role": "IT Security Assistant · Security Project Lead",
         "org": "DOMPLUS Groupe — apprenticeship, Grenoble",
         "desc": "GRC, ISSP and GDPR compliance (CNIL, ANSSI frameworks). Security committees, third-party risk management, awareness and phishing campaigns. Leading the EDR/XDR rollout and coordinating with the Orange Cyberdéfense SOC."

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Mael Belhacene — Cybersécurité · GRC · Développement sécurisé",
-    "description": "J’aligne la sécurité sur le réel : gouvernance, conformité et défense opérationnelle. Portfolio de Mael Belhacene, futur ingénieur en cybersécurité — Grenoble, France."
+    "description": "J’aligne la sécurité sur le réel : gouvernance, conformité et défense opérationnelle. Portfolio de Mael Belhacene, ingénieur cybersécurité chez DOMPLUS Groupe — Grenoble, France."
   },
   "a11y": {
     "skipLink": "Aller au contenu",
@@ -23,8 +23,8 @@
   "hero": {
     "eyebrow": "Cybersécurité · GRC · Développement sécurisé",
     "title": "Aligner la sécurité sur <em>le réel</em>.",
-    "subtitle": "Chef de projet sécurité chez DOMPLUS Groupe — gouvernance, conformité et défense opérationnelle, avec un passé de lead developer.",
-    "roleLine": "Chef de projet sécurité (alternance) · DOMPLUS Groupe",
+    "subtitle": "Ingénieur cybersécurité chez DOMPLUS Groupe — pilotage de projets sécurité, conformité et défense opérationnelle, avec un passé de lead developer.",
+    "roleLine": "Ingénieur cybersécurité (alternance) · DOMPLUS Groupe",
     "ctaProjects": "Voir mes projets",
     "ctaContact": "Me contacter"
   },
@@ -33,7 +33,7 @@
     "title": "Comprendre les deux mondes.",
     "quote": "J’aligne la sécurité sur le réel : gouvernance, conformité et défense opérationnelle.",
     "portraitAlt": "Portrait de Mael Belhacene",
-    "p1": "Futur ingénieur en cybersécurité, je suis aujourd’hui chef de projet sécurité en alternance chez DOMPLUS Groupe, à Grenoble. Mon terrain : la gouvernance, le risque et la conformité — PSSI, RGPD, comités sécurité, risque tiers — et leur traduction très concrète dans l’infrastructure et les outils.",
+    "p1": "Ingénieur cybersécurité en alternance au pôle Sécurité de DOMPLUS Groupe, à Grenoble, je pilote des projets sécurité de bout en bout. Mon terrain : la gouvernance, le risque et la conformité — PSSI, RGPD, ISO 27001, comités sécurité, risque tiers — et leur traduction très concrète dans l’infrastructure et les outils.",
     "p2": "Avant la sécurité, j’ai été lead developer : ERP Sage X3, applications Laravel et Node.js, plateforme de ticketing construite from scratch. Ce passé me donne un angle rare — je sais ce qu’un développeur peut casser, et comment un système se gouverne.",
     "p3": "Cap suivant : le Master Manager en Infrastructures et Cybersécurité des SI, avec un mémoire déjà en cours sur le déploiement de Sekoia XDR.",
     "statsLabel": "Chiffres clés",
@@ -49,7 +49,7 @@
     "items": [
       {
         "title": "Gouvernance, risques & conformité",
-        "desc": "PSSI, conformité RGPD sur les référentiels CNIL et ANSSI, comités sécurité, maîtrise du risque tiers, audit interne — une gouvernance qui tient dans le réel des équipes."
+        "desc": "PSSI, conformité RGPD sur les référentiels CNIL et ANSSI, comités sécurité, maîtrise du risque tiers, audits internes et ISO 27001 — une gouvernance qui tient dans le réel des équipes."
       },
       {
         "title": "Sécurité opérationnelle & défense",
@@ -69,14 +69,20 @@
     "label": "Expertises",
     "title": "Trois piliers, une même exigence.",
     "toolsLabel": "Environnement quotidien",
+    "tools": [
+      { "label": "Détection & réponse", "items": ["SentinelOne", "Sekoia XDR", "SOC Orange Cyberdéfense"] },
+      { "label": "Infrastructure & accès", "items": ["Active Directory / GPO", "Windows Server"] },
+      { "label": "Pilotage & conformité", "items": ["EasyRedmine", "ISO 27001", "RGPD / CNIL"] },
+      { "label": "Développement", "items": ["Laravel", "Node.js", "GitLab"] }
+    ],
     "pillars": [
       {
         "title": "Gouvernance & conformité",
-        "items": ["PSSI", "RGPD", "Référentiels CNIL / ANSSI", "Comités sécurité", "Risque tiers", "Audit interne"]
+        "items": ["PSSI", "RGPD", "ISO 27001", "Référentiels CNIL / ANSSI", "Comités sécurité", "Risque tiers", "Audit interne"]
       },
       {
         "title": "Sécurité opérationnelle",
-        "items": ["EDR / XDR", "Gestion d’incidents", "Durcissement", "Gestion des accès", "Active Directory / GPO", "PCA / PRA", "Sensibilisation & phishing"]
+        "items": ["EDR / XDR", "Gestion d’incidents & de crise", "Durcissement", "Gestion des accès", "Active Directory / GPO", "PCA / PRA", "Sensibilisation & phishing"]
       },
       {
         "title": "Développement sécurisé",
@@ -89,7 +95,13 @@
     "title": "Du code à la gouvernance.",
     "items": [
       {
-        "period": "janv. 2026 — aujourd’hui",
+        "period": "sept. 2026 — aujourd’hui",
+        "role": "Ingénieur cybersécurité",
+        "org": "DOMPLUS Groupe — alternance, pôle Sécurité, Grenoble",
+        "desc": "Pilotage de projets sécurité : recueil du besoin, cahiers des charges et dossiers d’architecture technique, coordination des services internes et des partenaires externes. Exploitation des outils EDR/XDR, veille vulnérabilités, audits sécurité et ISO 27001, GPO et administration de serveurs. Membre de la cellule de gestion d’incidents et de crise, support applicatif N2/N3."
+      },
+      {
+        "period": "janv. — août 2026",
         "role": "IT Security Assistant · Chef de projet sécurité",
         "org": "DOMPLUS Groupe — alternance, Grenoble",
         "desc": "GRC, PSSI et conformité RGPD (référentiels CNIL, ANSSI). Comités sécurité, maîtrise du risque tiers, sensibilisation et campagnes de phishing. Pilotage du déploiement EDR/XDR et coordination avec le SOC Orange Cyberdéfense."
