@@ -1,0 +1,286 @@
+@import "tailwindcss";
+
+/*
+ * ---------------------------------------------------------------------------
+ *  Direction artistique « Norme » — TOUS les tokens de DA vivent ici.
+ *  Nommage par rôle (surface, accent, hairline…), jamais par teinte.
+ *  Miroir littéral pour les contextes hors CSS (OG, manifeste, themeColor) :
+ *  src/lib/tokens.ts — un test vérifie la parité avec ce fichier.
+ * ---------------------------------------------------------------------------
+ */
+@theme {
+  /* Surfaces — le rythme des bandes */
+  --color-surface: #e9e8e4; /* papier gris — fond principal */
+  --color-surface-alt: #f6f5f2; /* blanc cassé — bande secondaire */
+  --color-surface-inverse: #1c1c1a; /* charbon — bandes sombres */
+  --color-surface-inverse-raised: #262624; /* surface relevée sur charbon */
+
+  /* Texte sur surfaces claires */
+  --color-foreground: #141413; /* encre — 15.0:1 sur surface */
+  --color-muted: #5c5b57; /* texte secondaire — 5.5:1 sur surface */
+  --color-faint: #7f7e79; /* grands index décoratifs uniquement (3.3:1, ≥ 24 px) */
+
+  /* Texte sur surface inverse */
+  --color-on-inverse: #f6f5f2; /* 15.7:1 sur charbon */
+  --color-on-inverse-muted: #a6a49e; /* 6.9:1 sur charbon */
+
+  /* Accent unique — vermillon, comme un tampon de signalétique */
+  --color-accent: #b0301a; /* 5.2:1 en texte sur surface */
+  --color-accent-strong: #8f2412; /* état hover — 7.1:1 */
+  --color-on-accent: #f6f5f2; /* 5.9:1 sur accent */
+  --color-on-inverse-accent: #f0704f; /* accent lisible sur charbon — 5.8:1 */
+
+  /* Filets de structure */
+  --color-hairline: #cfcdc7;
+  --color-hairline-inverse: #34342f;
+
+  /* Rayons — angles vifs, grille suisse */
+  --radius-none: 0;
+  --radius-xs: 2px;
+
+  /* Échelle typographique — Archivo (display) */
+  --text-display: clamp(3rem, 1.4rem + 7vw, 8rem);
+  --text-display--line-height: 0.92;
+  --text-display--letter-spacing: -0.035em;
+
+  --text-title: clamp(2.25rem, 1.6rem + 2.8vw, 4rem);
+  --text-title--line-height: 1;
+  --text-title--letter-spacing: -0.025em;
+
+  --text-index: clamp(3rem, 2rem + 4vw, 5.5rem);
+  --text-index--line-height: 1;
+  --text-index--letter-spacing: -0.03em;
+
+  --text-heading: clamp(1.375rem, 1.2rem + 0.8vw, 1.75rem);
+  --text-heading--line-height: 1.15;
+  --text-heading--letter-spacing: -0.015em;
+
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.2;
+  --text-label--letter-spacing: 0.12em;
+
+  /* Échelle typographique — IBM Plex Sans (texte) */
+  --text-lead: 1.25rem;
+  --text-lead--line-height: 1.5;
+
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+
+  --text-small: 0.9375rem;
+  --text-small--line-height: 1.5;
+
+  /* Mouvement — fondu + 12 px maximum */
+  --ease-out-quart: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-rise: rise 0.8s var(--ease-out-quart) both;
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Polices chargées par next/font (variables CSS injectées dans <html>) */
+@theme inline {
+  --font-display: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  --font-sans: var(--font-plex), "Segoe UI", system-ui, sans-serif;
+
+  /*
+   * Couleurs « de ton » : elles suivent la bande courante (claire / inverse).
+   * Les composants n’utilisent que celles-ci pour le texte et les filets,
+   * ce qui leur permet d’ignorer sur quel fond ils sont posés.
+   */
+  --color-ink: var(--tone-ink);
+  --color-ink-muted: var(--tone-ink-muted);
+  --color-ink-faint: var(--tone-ink-faint);
+  --color-rule: var(--tone-rule);
+  --color-mark: var(--tone-mark);
+  --color-mark-strong: var(--tone-mark-strong);
+  --color-ground: var(--tone-ground);
+}
+
+@layer base {
+  :root,
+  .band-surface {
+    --tone-ground: var(--color-surface);
+    --tone-ink: var(--color-foreground);
+    --tone-ink-muted: var(--color-muted);
+    --tone-ink-faint: var(--color-faint);
+    --tone-rule: var(--color-hairline);
+    --tone-mark: var(--color-accent);
+    --tone-mark-strong: var(--color-accent-strong);
+  }
+
+  .band-alt {
+    --tone-ground: var(--color-surface-alt);
+  }
+
+  .band-inverse {
+    --tone-ground: var(--color-surface-inverse);
+    --tone-ink: var(--color-on-inverse);
+    --tone-ink-muted: var(--color-on-inverse-muted);
+    --tone-ink-faint: var(--color-on-inverse-muted);
+    --tone-rule: var(--color-hairline-inverse);
+    --tone-mark: var(--color-on-inverse-accent);
+    --tone-mark-strong: var(--color-on-inverse);
+  }
+
+  .band-surface,
+  .band-alt,
+  .band-inverse {
+    background-color: var(--tone-ground);
+    color: var(--tone-ink);
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  html[data-scroll-behavior="smooth"] {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html[data-scroll-behavior="smooth"] {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    @apply bg-surface font-sans text-body text-foreground antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+  }
+
+  /* Focus visible sur chaque contrôle — couleur d’accent du ton courant */
+  :focus-visible {
+    outline: 2px solid var(--tone-mark);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+@layer components {
+  /* Reveal à l’entrée du viewport (voir components/ui/Reveal.tsx) */
+  [data-reveal="hidden"] {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  [data-reveal="shown"] {
+    opacity: 1;
+    transform: none;
+    transition:
+      opacity 0.7s var(--ease-out-quart),
+      transform 0.7s var(--ease-out-quart);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+}
+
+/* Grille 12 colonnes — la structure de toutes les sections */
+@utility container-grid {
+  @apply mx-auto grid w-full max-w-[1320px] grid-cols-12 gap-x-6 px-6 md:px-10;
+}
+
+/* Intitulé en capitales espacées — le « tampon » typographique */
+@utility label {
+  font-family: var(--font-display);
+  font-size: var(--text-label);
+  line-height: var(--text-label--line-height);
+  letter-spacing: var(--text-label--letter-spacing);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+@utility tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+@utility link-underline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.3em;
+  text-decoration-color: var(--tone-rule);
+  transition: text-decoration-color 0.2s ease;
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+@utility btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-accent);
+  color: var(--color-on-accent);
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s var(--ease-out-quart);
+  &:hover {
+    background-color: var(--color-accent-strong);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: wait;
+  }
+}
+
+@utility btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 3rem;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--tone-ink);
+  color: var(--tone-ink);
+  font-family: var(--font-display);
+  font-size: var(--text-small);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s var(--ease-out-quart);
+  &:hover {
+    background-color: var(--tone-ink);
+    color: var(--tone-ground);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "Mael Belhacene — Cybersecurity · GRC · Secure Development",
+    "description": "I align security with reality: governance, compliance, and operational defense. Portfolio of Mael Belhacene, cybersecurity engineer in the making — Grenoble, France."
+  },
+  "a11y": {
+    "skipLink": "Skip to content",
+    "mainNav": "Main navigation",
+    "localeSwitch": "Switch to French",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu"
+  },
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "expertise": "Expertise",
+    "experience": "Experience",
+    "education": "Education",
+    "projects": "Projects",
+    "contact": "Contact",
+    "cv": "CV"
+  },
+  "hero": {
+    "eyebrow": "Cybersecurity · GRC · Secure Development",
+    "title": "Aligning security with <em>reality</em>.",
+    "subtitle": "Security project lead at DOMPLUS Groupe — governance, compliance, and operational defense, with a lead-developer background.",
+    "roleLine": "Security project lead (apprenticeship) · DOMPLUS Groupe",
+    "ctaProjects": "View my work",
+    "ctaContact": "Get in touch"
+  },
+  "about": {
+    "label": "About",
+    "title": "Understanding both worlds.",
+    "quote": "I align security with reality: governance, compliance, and operational defense.",
+    "portraitAlt": "Portrait of Mael Belhacene",
+    "p1": "A cybersecurity engineer in the making, I currently work as a security project lead (apprenticeship) at DOMPLUS Groupe in Grenoble. My ground: governance, risk and compliance — ISSP, GDPR, security committees, third-party risk — and their very concrete translation into infrastructure and tooling.",
+    "p2": "Before security, I was a lead developer: Sage X3 ERP, Laravel and Node.js applications, a ticketing platform built from scratch. That past gives me a rare angle — I know what a developer can break, and how a system is governed.",
+    "p3": "Next heading: a Master’s degree in IT Infrastructure & Cybersecurity Management, with a thesis already underway on deploying Sekoia XDR.",
+    "statsLabel": "Key figures",
+    "stats": {
+      "years": { "value": 3, "label": "years of IT experience at DOMPLUS" },
+      "ects": { "value": 120, "label": "ECTS credits earned" },
+      "areas": { "value": 4, "label": "areas of practice" }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "Four areas of practice.",
+    "items": [
+      {
+        "title": "Governance, risk & compliance",
+        "desc": "ISSP, GDPR compliance built on CNIL and ANSSI frameworks, security committees, third-party risk management, internal audit — governance that holds up in the reality of teams."
+      },
+      {
+        "title": "Operational security & defense",
+        "desc": "EDR/XDR deployment and management, incident response with an outsourced SOC, system hardening, access management, BCP/DRP."
+      },
+      {
+        "title": "Awareness & the human factor",
+        "desc": "Awareness programs, measured phishing campaigns, a security culture built close to the business."
+      },
+      {
+        "title": "Secure development",
+        "desc": "Laravel and Node.js applications designed security-first, REST APIs, code reviews, GitLab — a developer’s eye in service of defense."
+      }
+    ]
+  },
+  "expertise": {
+    "label": "Expertise",
+    "title": "Three pillars, one standard.",
+    "toolsLabel": "Daily toolkit",
+    "pillars": [
+      {
+        "title": "Governance & compliance",
+        "items": ["ISSP", "GDPR", "CNIL / ANSSI frameworks", "Security committees", "Third-party risk", "Internal audit"]
+      },
+      {
+        "title": "Operational security",
+        "items": ["EDR / XDR", "Incident response", "Hardening", "Access management", "Active Directory / GPO", "BCP / DRP", "Awareness & phishing"]
+      },
+      {
+        "title": "Secure development",
+        "items": ["Laravel (PHP)", "Node.js", "MySQL", "REST APIs", "GitLab", "Security by design", "Agile / Scrum"]
+      }
+    ]
+  },
+  "experience": {
+    "label": "Experience",
+    "title": "From code to governance.",
+    "items": [
+      {
+        "period": "Jan. 2026 — today",
+        "role": "IT Security Assistant · Security Project Lead",
+        "org": "DOMPLUS Groupe — apprenticeship, Grenoble",
+        "desc": "GRC, ISSP and GDPR compliance (CNIL, ANSSI frameworks). Security committees, third-party risk management, awareness and phishing campaigns. Leading the EDR/XDR rollout and coordinating with the Orange Cyberdéfense SOC."
+      },
+      {
+        "period": "Sept. 2025 — Jan. 2026",
+        "role": "IT Infrastructure & Security Administrator",
+        "org": "DOMPLUS Groupe — Grenoble",
+        "desc": "Operational continuity, hardening, high availability, access management and attack-surface reduction."
+      },
+      {
+        "period": "July 2023 — Aug. 2025",
+        "role": "Project & Application Manager",
+        "org": "DOMPLUS Groupe — Grenoble",
+        "desc": "Sage X3 ERP rollout, security-by-design Laravel / Node.js web applications, a from-scratch ticketing platform integrated with EasyRedmine through its REST API."
+      },
+      {
+        "period": "Jan. — Feb. 2023",
+        "role": "IT & Cloud Technician — internship",
+        "org": "PROWEBCE",
+        "desc": "SSL certificates, asset inventory, AWS hosting."
+      }
+    ]
+  },
+  "education": {
+    "label": "Education",
+    "title": "Background & certification.",
+    "items": [
+      {
+        "years": "2025 — 2026",
+        "degree": "Bachelor’s degree, Systems & Network Administration",
+        "school": "CESI",
+        "note": "Thesis: selecting and deploying Sekoia XDR at DOMPLUS Groupe."
+      },
+      {
+        "years": "2023 — 2025",
+        "degree": "Two-year degree, Software Development",
+        "school": "CESI",
+        "note": "120 ECTS credits — development foundations: PHP, JavaScript, SQL, project management."
+      }
+    ],
+    "certLabel": "Certification",
+    "cert": {
+      "title": "Cybercrime",
+      "org": "United Nations",
+      "date": "Dec. 2025",
+      "id": "ID 1774172153MB"
+    }
+  },
+  "projects": {
+    "label": "Projects",
+    "title": "Three projects, three scales.",
+    "contextLabel": "Context",
+    "roleLabel": "Role",
+    "stackLabel": "Stack",
+    "items": [
+      {
+        "title": "Sekoia XDR deployment",
+        "context": "Thesis subject at DOMPLUS Groupe: giving the group a unified detection-and-response capability.",
+        "role": "Comparative study, solution selection, integration into the IS and day-to-day operation, in coordination with the SOC.",
+        "stack": ["XDR", "Sekoia", "Detection & response"]
+      },
+      {
+        "title": "From-scratch ticketing platform",
+        "context": "Streamlining the group’s HR and IT requests without multiplying tools.",
+        "role": "Full design and development, EasyRedmine integration through its REST API, workflow automation.",
+        "stack": ["Laravel", "REST API", "Automation"]
+      },
+      {
+        "title": "Sage X3 ERP rollout",
+        "context": "Migrating the group’s critical management processes to a single ERP.",
+        "role": "Reporting outputs, data migration, configuration of critical modules.",
+        "stack": ["ERP", "Sage X3", "Migration"]
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Let’s talk security.",
+    "lead": "An upcoming apprenticeship, a governance question, a project to frame or just a conversation — I reply quickly.",
+    "directLabel": "Direct email",
+    "socialLabel": "Elsewhere",
+    "cvLabel": "Download CV",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Message sent — I’ll get back to you shortly.",
+      "errorValidation": "Please check the highlighted fields.",
+      "errorUnconfigured": "The sending service isn’t configured yet — please email me directly.",
+      "errorGeneric": "Something went wrong — try again, or email me directly.",
+      "fieldErrors": {
+        "name": "Please enter your name (at least 2 characters).",
+        "email": "Invalid email address.",
+        "subject": "Please enter a subject.",
+        "message": "Your message is a bit short (at least 10 characters)."
+      }
+    }
+  },
+  "footer": {
+    "role": "Cybersecurity · GRC · Secure Development",
+    "location": "Grenoble, France",
+    "top": "Back to top"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page not found.",
+    "description": "This address isn’t listed in any register. For once, that’s not a non-conformity.",
+    "back": "Back to home"
+  }
+}

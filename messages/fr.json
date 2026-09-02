@@ -1,0 +1,206 @@
+{
+  "meta": {
+    "title": "Mael Belhacene — Cybersécurité · GRC · Développement sécurisé",
+    "description": "J’aligne la sécurité sur le réel : gouvernance, conformité et défense opérationnelle. Portfolio de Mael Belhacene, futur ingénieur en cybersécurité — Grenoble, France."
+  },
+  "a11y": {
+    "skipLink": "Aller au contenu",
+    "mainNav": "Navigation principale",
+    "localeSwitch": "Passer en anglais",
+    "menuOpen": "Ouvrir le menu",
+    "menuClose": "Fermer le menu"
+  },
+  "nav": {
+    "about": "À propos",
+    "services": "Services",
+    "expertise": "Expertises",
+    "experience": "Expérience",
+    "education": "Formation",
+    "projects": "Projets",
+    "contact": "Contact",
+    "cv": "CV"
+  },
+  "hero": {
+    "eyebrow": "Cybersécurité · GRC · Développement sécurisé",
+    "title": "Aligner la sécurité sur <em>le réel</em>.",
+    "subtitle": "Chef de projet sécurité chez DOMPLUS Groupe — gouvernance, conformité et défense opérationnelle, avec un passé de lead developer.",
+    "roleLine": "Chef de projet sécurité (alternance) · DOMPLUS Groupe",
+    "ctaProjects": "Voir mes projets",
+    "ctaContact": "Me contacter"
+  },
+  "about": {
+    "label": "À propos",
+    "title": "Comprendre les deux mondes.",
+    "quote": "J’aligne la sécurité sur le réel : gouvernance, conformité et défense opérationnelle.",
+    "portraitAlt": "Portrait de Mael Belhacene",
+    "p1": "Futur ingénieur en cybersécurité, je suis aujourd’hui chef de projet sécurité en alternance chez DOMPLUS Groupe, à Grenoble. Mon terrain : la gouvernance, le risque et la conformité — PSSI, RGPD, comités sécurité, risque tiers — et leur traduction très concrète dans l’infrastructure et les outils.",
+    "p2": "Avant la sécurité, j’ai été lead developer : ERP Sage X3, applications Laravel et Node.js, plateforme de ticketing construite from scratch. Ce passé me donne un angle rare — je sais ce qu’un développeur peut casser, et comment un système se gouverne.",
+    "p3": "Cap suivant : le Master Manager en Infrastructures et Cybersécurité des SI, avec un mémoire déjà en cours sur le déploiement de Sekoia XDR.",
+    "statsLabel": "Chiffres clés",
+    "stats": {
+      "years": { "value": 3, "label": "années d’expérience IT chez DOMPLUS" },
+      "ects": { "value": 120, "label": "crédits ECTS validés" },
+      "areas": { "value": 4, "label": "terrains d’intervention" }
+    }
+  },
+  "services": {
+    "label": "Services",
+    "title": "Quatre terrains d’intervention.",
+    "items": [
+      {
+        "title": "Gouvernance, risques & conformité",
+        "desc": "PSSI, conformité RGPD sur les référentiels CNIL et ANSSI, comités sécurité, maîtrise du risque tiers, audit interne — une gouvernance qui tient dans le réel des équipes."
+      },
+      {
+        "title": "Sécurité opérationnelle & défense",
+        "desc": "Déploiement et pilotage EDR/XDR, gestion d’incidents avec SOC externalisé, durcissement des systèmes, gestion des accès, PCA/PRA."
+      },
+      {
+        "title": "Sensibilisation & facteur humain",
+        "desc": "Programmes de sensibilisation, campagnes de phishing mesurées, culture sécurité construite au plus près des métiers."
+      },
+      {
+        "title": "Développement sécurisé",
+        "desc": "Applications Laravel et Node.js pensées security by design, API REST, revues de code, GitLab — l’œil du développeur au service de la défense."
+      }
+    ]
+  },
+  "expertise": {
+    "label": "Expertises",
+    "title": "Trois piliers, une même exigence.",
+    "toolsLabel": "Environnement quotidien",
+    "pillars": [
+      {
+        "title": "Gouvernance & conformité",
+        "items": ["PSSI", "RGPD", "Référentiels CNIL / ANSSI", "Comités sécurité", "Risque tiers", "Audit interne"]
+      },
+      {
+        "title": "Sécurité opérationnelle",
+        "items": ["EDR / XDR", "Gestion d’incidents", "Durcissement", "Gestion des accès", "Active Directory / GPO", "PCA / PRA", "Sensibilisation & phishing"]
+      },
+      {
+        "title": "Développement sécurisé",
+        "items": ["Laravel (PHP)", "Node.js", "MySQL", "API REST", "GitLab", "Security by design", "Agile / Scrum"]
+      }
+    ]
+  },
+  "experience": {
+    "label": "Expérience",
+    "title": "Du code à la gouvernance.",
+    "items": [
+      {
+        "period": "janv. 2026 — aujourd’hui",
+        "role": "IT Security Assistant · Chef de projet sécurité",
+        "org": "DOMPLUS Groupe — alternance, Grenoble",
+        "desc": "GRC, PSSI et conformité RGPD (référentiels CNIL, ANSSI). Comités sécurité, maîtrise du risque tiers, sensibilisation et campagnes de phishing. Pilotage du déploiement EDR/XDR et coordination avec le SOC Orange Cyberdéfense."
+      },
+      {
+        "period": "sept. 2025 — janv. 2026",
+        "role": "IT Infrastructure & Security Administrator",
+        "org": "DOMPLUS Groupe — Grenoble",
+        "desc": "Maintien en condition opérationnelle, durcissement, haute disponibilité, gestion des accès et réduction de la surface d’attaque."
+      },
+      {
+        "period": "juil. 2023 — août 2025",
+        "role": "Project & Application Manager",
+        "org": "DOMPLUS Groupe — Grenoble",
+        "desc": "Déploiement de l’ERP Sage X3, applications web Laravel / Node.js « security by design », plateforme de ticketing from scratch interfacée à EasyRedmine via API REST."
+      },
+      {
+        "period": "janv. — févr. 2023",
+        "role": "IT & Cloud Technician — stage",
+        "org": "PROWEBCE",
+        "desc": "Certificats SSL, inventaire de parc, hébergement AWS."
+      }
+    ]
+  },
+  "education": {
+    "label": "Formation",
+    "title": "Parcours & certification.",
+    "items": [
+      {
+        "years": "2025 — 2026",
+        "degree": "Bachelor Administrateur Systèmes & Réseaux",
+        "school": "CESI",
+        "note": "Mémoire : choix et déploiement de Sekoia XDR chez DOMPLUS Groupe."
+      },
+      {
+        "years": "2023 — 2025",
+        "degree": "Bac+2 Développement informatique & logiciel",
+        "school": "CESI",
+        "note": "120 crédits ECTS — socle développement : PHP, JavaScript, SQL, gestion de projet."
+      }
+    ],
+    "certLabel": "Certification",
+    "cert": {
+      "title": "Cybercriminalité",
+      "org": "United Nations",
+      "date": "déc. 2025",
+      "id": "ID 1774172153MB"
+    }
+  },
+  "projects": {
+    "label": "Projets",
+    "title": "Trois projets, trois échelles.",
+    "contextLabel": "Contexte",
+    "roleLabel": "Rôle",
+    "stackLabel": "Stack",
+    "items": [
+      {
+        "title": "Déploiement Sekoia XDR",
+        "context": "Sujet de mémoire chez DOMPLUS Groupe : doter le groupe d’une capacité unifiée de détection et de réponse.",
+        "role": "Étude comparative, choix de la solution, intégration au SI et exploitation quotidienne, en coordination avec le SOC.",
+        "stack": ["XDR", "Sekoia", "Détection & réponse"]
+      },
+      {
+        "title": "Plateforme de ticketing from scratch",
+        "context": "Fluidifier les demandes RH et IT du groupe sans multiplier les outils.",
+        "role": "Conception et développement complet, interfaçage EasyRedmine via API REST, automatisation des flux.",
+        "stack": ["Laravel", "API REST", "Automatisation"]
+      },
+      {
+        "title": "Déploiement ERP Sage X3",
+        "context": "Migrer les processus de gestion critiques du groupe vers un ERP unique.",
+        "role": "États de reporting, migration de données, paramétrage de modules critiques.",
+        "stack": ["ERP", "Sage X3", "Migration"]
+      }
+    ]
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Parlons sécurité.",
+    "lead": "Alternance à venir, question de gouvernance, projet à cadrer ou simple échange — je réponds rapidement.",
+    "directLabel": "Email direct",
+    "socialLabel": "Ailleurs",
+    "cvLabel": "Télécharger le CV",
+    "form": {
+      "name": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours…",
+      "success": "Message envoyé — je vous réponds rapidement.",
+      "errorValidation": "Vérifiez les champs signalés.",
+      "errorUnconfigured": "Le service d’envoi n’est pas encore configuré — écrivez-moi directement par email.",
+      "errorGeneric": "Une erreur est survenue — réessayez, ou écrivez-moi directement par email.",
+      "fieldErrors": {
+        "name": "Indiquez votre nom (2 caractères minimum).",
+        "email": "Adresse email invalide.",
+        "subject": "Indiquez un sujet.",
+        "message": "Votre message est un peu court (10 caractères minimum)."
+      }
+    }
+  },
+  "footer": {
+    "role": "Cybersécurité · GRC · Développement sécurisé",
+    "location": "Grenoble, France",
+    "top": "Retour en haut"
+  },
+  "notFound": {
+    "code": "404",
+    "title": "Page introuvable.",
+    "description": "Cette adresse ne figure dans aucun référentiel. Pour une fois, ce n’est pas une non-conformité.",
+    "back": "Retour à l’accueil"
+  }
+}
