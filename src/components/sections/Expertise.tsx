@@ -4,26 +4,53 @@ import Reveal from "@/components/ui/Reveal";
 import { toolMarks } from "@/lib/tools";
 
 type Pillar = { title: string; items: string[] };
-type ToolGroup = { label: string; items: { id: string; label: string }[] };
+type ToolItem = { id: string; label: string };
+type ToolGroup = { label: string; items: ToolItem[] };
 
-/** Logo monochrome (SVG serveur, zéro JS) ou monogramme typographique. */
-function ToolMark({ id, label }: { id: string; label: string }) {
+const ICON = "size-[22px] shrink-0";
+
+/**
+ * Marque d’un outil : logo libre, pictogramme officiel, mot-symbole ou
+ * monogramme typographique. Toujours nommée pour les lecteurs d’écran ;
+ * rendue en SVG côté serveur, zéro JavaScript.
+ */
+function ToolMark({ id, label }: ToolItem) {
   const mark = toolMarks[id];
+
   if (mark && "icon" in mark) {
     return (
-      <svg
-        viewBox="0 0 24 24"
-        width="22"
-        height="22"
-        role="img"
-        aria-label={label}
-        fill="currentColor"
-        className="shrink-0"
-      >
+      <svg viewBox="0 0 24 24" role="img" aria-label={label} fill="currentColor" className={ICON}>
         <path d={mark.icon.path} />
       </svg>
     );
   }
+
+  if (mark && "symbol" in mark) {
+    return (
+      <svg
+        viewBox={mark.symbol.viewBox}
+        role="img"
+        aria-label={label}
+        fill="currentColor"
+        className={ICON}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        {mark.symbol.paths.map((d, i) => (
+          <path key={i} d={d} />
+        ))}
+      </svg>
+    );
+  }
+
+  if (mark && "knockout" in mark) {
+    return (
+      <svg viewBox={mark.knockout.viewBox} role="img" aria-label={label} className={ICON}>
+        <path d={mark.knockout.square} fill="currentColor" />
+        <path d={mark.knockout.eight} fill="var(--tone-ground)" />
+      </svg>
+    );
+  }
+
   const letters = mark && "mark" in mark ? mark.mark : label.slice(0, 2).toUpperCase();
   return (
     <span
@@ -35,6 +62,43 @@ function ToolMark({ id, label }: { id: string; label: string }) {
     >
       <span aria-hidden="true">{letters}</span>
     </span>
+  );
+}
+
+/** Ligne d’outil : mot-symbole seul, ou marque + nom. */
+function ToolRow({ id, label }: ToolItem) {
+  const mark = toolMarks[id];
+
+  if (mark && "wordmark" in mark) {
+    return (
+      <li className="flex items-center gap-2 text-ink">
+        <svg
+          viewBox={mark.wordmark.viewBox}
+          role="img"
+          aria-label={label}
+          fill="currentColor"
+          className="h-[1.125rem] w-auto shrink-0"
+        >
+          {mark.wordmark.paths.map((d, i) => (
+            <path key={i} d={d} />
+          ))}
+        </svg>
+        {mark.tail && (
+          <span aria-hidden="true" className="font-display text-small font-medium">
+            {mark.tail}
+          </span>
+        )}
+      </li>
+    );
+  }
+
+  return (
+    <li className="flex items-center gap-3 text-ink">
+      <ToolMark id={id} label={label} />
+      <span aria-hidden="true" className="font-display text-small font-medium">
+        {label}
+      </span>
+    </li>
   );
 }
 
@@ -75,12 +139,7 @@ export default function Expertise() {
               <dd className="mt-4">
                 <ul className="space-y-3">
                   {group.items.map((item) => (
-                    <li key={item.id} className="flex items-center gap-3 text-ink">
-                      <ToolMark id={item.id} label={item.label} />
-                      <span aria-hidden="true" className="font-display text-small font-medium">
-                        {item.label}
-                      </span>
-                    </li>
+                    <ToolRow key={item.id} id={item.id} label={item.label} />
                   ))}
                 </ul>
               </dd>

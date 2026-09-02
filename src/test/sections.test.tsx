@@ -65,8 +65,12 @@ describe("rendu des sections (fr)", () => {
         expect(screen.getByRole("img", { name: item.label })).toBeInTheDocument();
       }
     }
-    expect(screen.getByRole("img", { name: "GitLab" }).tagName).toBe("svg");
-    expect(screen.getByRole("img", { name: "SentinelOne" })).toHaveTextContent("S1");
+    // Logos vectoriels : Simple Icons, symboles et mot-symboles officiels
+    for (const name of ["GitLab", "SentinelOne", "Sekoia XDR", "Easy8 · ex-EasyRedmine"]) {
+      expect(screen.getByRole("img", { name }).tagName).toBe("svg");
+    }
+    // Monogramme typographique quand aucun logo n’est disponible
+    expect(screen.getByRole("img", { name: "ISO 27001" })).toHaveTextContent("ISO");
   });
 
   it("Expérience : les 5 postes avec période et monogramme d’organisation", () => {

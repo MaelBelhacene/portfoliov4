@@ -85,7 +85,7 @@
       {
         "label": "Project & compliance",
         "items": [
-          { "id": "easyredmine", "label": "EasyRedmine" },
+          { "id": "easyredmine", "label": "Easy8 · formerly EasyRedmine" },
           { "id": "iso27001", "label": "ISO 27001" },
           { "id": "rgpd", "label": "GDPR / CNIL" }
         ]

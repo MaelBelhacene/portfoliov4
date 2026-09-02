@@ -85,7 +85,7 @@
       {
         "label": "Pilotage & conformité",
         "items": [
-          { "id": "easyredmine", "label": "EasyRedmine" },
+          { "id": "easyredmine", "label": "Easy8 · ex-EasyRedmine" },
           { "id": "iso27001", "label": "ISO 27001" },
           { "id": "rgpd", "label": "RGPD / CNIL" }
         ]
