@@ -8,6 +8,8 @@ import { buildLocaleMetadata, type Locale } from "@/lib/seo";
 import { tokens } from "@/lib/tokens";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import HelloIntro from "@/components/ui/HelloIntro";
+import { AppleHelloEnglishEffect } from "@/components/ui/apple-hello-effect";
 import "../globals.css";
 
 const archivo = Archivo({
@@ -71,8 +73,12 @@ export default async function LocaleLayout({
     >
       <body className="min-h-svh">
         <noscript>
-          <style>{`[data-reveal]{opacity:1 !important;transform:none !important}`}</style>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important}.intro-curtain{display:none !important}`}</style>
         </noscript>
+        <HelloIntro>
+          {/* Rendu côté serveur : les tracés ne partent pas dans le bundle client */}
+          <AppleHelloEnglishEffect speed={0.7} className="h-14 w-auto md:h-20" />
+        </HelloIntro>
         <a
           href="#main"
           className="label sr-only z-[100] bg-accent px-4 py-3 text-on-accent focus:not-sr-only focus:fixed focus:top-4 focus:left-4"

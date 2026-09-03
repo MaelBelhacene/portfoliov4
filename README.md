@@ -45,8 +45,6 @@ Tout est centralisé dans `src/lib/site.ts` :
 - [ ] Variables Resend dans `.env.local` (voir `.env.example`)
 - [ ] Vrais SVG des organisations, si souhaité, à la place des monogrammes
       (`src/lib/orgs.ts`)
-- [ ] **Supprimer les démos de composants** `src/app/[locale]/lab/` et leur
-      exclusion dans `src/app/robots.ts` (piège de la v3 à ne pas répéter)
 
 ## Accessibilité
 

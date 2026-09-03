@@ -3,8 +3,7 @@ import { site } from "@/lib/site";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    // /lab : démos de composants, temporaires et jamais indexées
-    rules: [{ userAgent: "*", allow: "/", disallow: ["/api/", "/lab", "/en/lab"] }],
+    rules: [{ userAgent: "*", allow: "/", disallow: ["/api/"] }],
     sitemap: `${site.url}/sitemap.xml`,
   };
 }
