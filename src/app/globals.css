@@ -207,6 +207,7 @@
     transition: opacity 0.5s var(--ease-out-quart);
   }
 
+
   .intro-curtain-leaving {
     opacity: 0;
   }
@@ -247,6 +248,19 @@
       opacity: 1;
     }
   }
+}
+
+/*
+ * Rideau déjà vu dans cette session : masqué avant le premier rendu par le
+ * script de lib/intro.ts, donc jamais entrevu.
+ *
+ * Volontairement hors de toute `@layer` : le rideau porte l’utilitaire
+ * `grid`, et les utilitaires Tailwind passent après la couche `components`.
+ * Une règle sans couche l’emporte sur toutes les règles en couche, quelle
+ * que soit leur spécificité.
+ */
+html[data-intro="seen"] .intro-curtain {
+  display: none;
 }
 
 /* Grille 12 colonnes — la structure de toutes les sections */

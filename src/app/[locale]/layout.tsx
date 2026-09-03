@@ -10,6 +10,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HelloIntro from "@/components/ui/HelloIntro";
 import { AppleHelloEnglishEffect } from "@/components/ui/apple-hello-effect";
+import { INTRO_GUARD_SCRIPT } from "@/lib/intro";
 import "../globals.css";
 
 const archivo = Archivo({
@@ -75,6 +76,9 @@ export default async function LocaleLayout({
         <noscript>
           <style>{`[data-reveal]{opacity:1 !important;transform:none !important}.intro-curtain{display:none !important}`}</style>
         </noscript>
+        {/* Doit rester avant le rideau : il est exécuté pendant l’analyse du
+            document, donc avant que le rideau ne soit peint. */}
+        <script dangerouslySetInnerHTML={{ __html: INTRO_GUARD_SCRIPT }} />
         <HelloIntro>
           {/* Rendu côté serveur : les tracés ne partent pas dans le bundle client */}
           <AppleHelloEnglishEffect speed={0.7} className="h-14 w-auto md:h-20" />

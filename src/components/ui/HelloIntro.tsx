@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState, type ReactNode } from "react";
+import { INTRO_STORAGE_KEY } from "@/lib/intro";
 
 /** Respiration après le tracé, puis fondu du rideau. */
 const HOLD_MS = 500;
@@ -47,6 +48,22 @@ export default function HelloIntro({ children }: { children: ReactNode }) {
     // au nettoyage de purger aussi les minuteries posées par `dismiss`.
     const pending = timers.current;
     const holdThenDismiss = () => pending.push(setTimeout(dismiss, HOLD_MS));
+
+    let alreadySeen = false;
+    try {
+      alreadySeen = sessionStorage.getItem(INTRO_STORAGE_KEY) !== null;
+      sessionStorage.setItem(INTRO_STORAGE_KEY, "1");
+    } catch {
+      // sessionStorage indisponible (navigation privée) : le rideau se joue.
+    }
+
+    // Déjà joué dans cette session : le CSS l’a masqué avant le premier
+    // rendu, il ne reste qu’à le sortir du DOM — sans écouteurs ni
+    // minuteries d’animation.
+    if (alreadySeen) {
+      pending.push(setTimeout(() => setDone(true), 0));
+      return () => pending.forEach(clearTimeout);
+    }
 
     // On lit l’état du dernier trait plutôt que d’attendre un `animationend` :
     // l’animation CSS démarre au premier rendu, avant l’hydratation, et
