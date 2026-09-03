@@ -49,12 +49,18 @@ export default function HelloIntro({ children }: { children: ReactNode }) {
     const pending = timers.current;
     const holdThenDismiss = () => pending.push(setTimeout(dismiss, HOLD_MS));
 
-    let alreadySeen = false;
+    // La décision se lit sur l’attribut posé avant l’hydratation par le
+    // script de lib/intro.ts — et non sur le sessionStorage directement.
+    // C’est la même source que celle du CSS, et surtout elle ne bouge pas
+    // pendant la vie de la page : en développement React monte les effets
+    // deux fois, et relire le stockage donnerait « déjà vu » au second
+    // passage à cause du drapeau que le premier vient d’écrire.
+    const alreadySeen = document.documentElement.dataset.intro === "seen";
     try {
-      alreadySeen = sessionStorage.getItem(INTRO_STORAGE_KEY) !== null;
       sessionStorage.setItem(INTRO_STORAGE_KEY, "1");
     } catch {
-      // sessionStorage indisponible (navigation privée) : le rideau se joue.
+      // sessionStorage indisponible (navigation privée) : le rideau se joue
+      // à chaque page, c’est le comportement dégradé acceptable.
     }
 
     // Déjà joué dans cette session : le CSS l’a masqué avant le premier
