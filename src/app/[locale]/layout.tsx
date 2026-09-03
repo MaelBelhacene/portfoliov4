@@ -71,6 +71,12 @@ export default async function LocaleLayout({
       lang={locale}
       data-scroll-behavior="smooth"
       className={`${archivo.variable} ${plexSans.variable}`}
+      // Le script de lib/intro.ts pose `data-intro` sur cet élément avant
+      // l’hydratation : le serveur ne peut pas connaître l’état du
+      // sessionStorage, l’écart est donc attendu. La suppression ne porte
+      // que sur les attributs de cette balise, jamais sur le reste de
+      // l’arbre, qui garde sa vérification d’hydratation complète.
+      suppressHydrationWarning
     >
       <body className="min-h-svh">
         <noscript>
