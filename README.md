@@ -39,7 +39,7 @@ Trois contextes lisent des valeurs littérales — image Open Graph, manifeste,
 Tout est centralisé dans `src/lib/site.ts` :
 
 - [ ] Domaine final (`url`, ou `NEXT_PUBLIC_SITE_URL`)
-- [ ] CV : `public/cv-mael-belhacene.pdf`
+- [x] CV : `public/cv-mael-belhacene.pdf` — à régénérer si le parcours évolue
 - [ ] Photo : `public/portrait-mael.(avif|webp|jpg|png)` — sans elle, un
       carton d’identité typographique est affiché à sa place
 - [ ] Variables Resend dans `.env.local` (voir `.env.example`)
