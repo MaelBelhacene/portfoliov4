@@ -46,6 +46,34 @@ Tout est centralisé dans `src/lib/site.ts` :
 - [ ] Vrais SVG des organisations, si souhaité, à la place des monogrammes
       (`src/lib/orgs.ts`)
 
+## Formulaire de contact
+
+L'envoi passe par une route serveur, `src/app/api/contact/route.ts`, et par
+[Resend](https://resend.com). La clé n'existe qu'en variable d'environnement,
+jamais dans le code ni dans le dépôt.
+
+Sans configuration, la route répond `503 unconfigured` et le formulaire affiche
+« le service d'envoi n'est pas encore configuré », avec l'adresse email juste à
+côté. C'est un repli volontaire : rien ne casse, le visiteur a toujours un moyen
+de joindre.
+
+Pour l'activer en production :
+
+```bash
+vercel env add RESEND_API_KEY production
+vercel env add CONTACT_TO_EMAIL production
+vercel redeploy
+```
+
+La CLI demande chaque valeur de façon interactive — elle ne transite ni par un
+fichier, ni par l'historique du shell. Voir `.env.example` pour le détail de
+chaque variable, notamment le choix de l'expéditeur.
+
+Protections en place : champ piège (honeypot) traité en silence, validation
+serveur stricte (`src/lib/contact.ts`, couverte par tests). Il n'y a pas de
+limitation de débit applicative — si le formulaire est abusé, la réponse est
+le pare-feu Vercel, qui filtre en amont de la fonction.
+
 ## Accessibilité
 
 Contrastes AA mesurés (voir commentaires dans `globals.css`), navigation

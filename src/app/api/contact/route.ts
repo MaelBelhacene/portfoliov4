@@ -33,15 +33,26 @@ export async function POST(request: Request) {
 
   const { name, email, subject, message } = result.data;
   const resend = new Resend(apiKey);
-  const { error } = await resend.emails.send({
-    from: process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>",
-    to,
-    replyTo: email,
-    subject: `[Portfolio] ${subject}`,
-    text: `De : ${name} <${email}>\n\n${message}`,
-  });
+
+  let error;
+  try {
+    ({ error } = await resend.emails.send({
+      from: process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>",
+      to,
+      replyTo: email,
+      subject: `[Portfolio] ${subject}`,
+      text: `De : ${name} <${email}>\n\n${message}`,
+    }));
+  } catch (thrown) {
+    // Panne réseau ou clé malformée : Resend lève au lieu de renvoyer `error`.
+    error = thrown;
+  }
 
   if (error) {
+    // Journalisé côté serveur uniquement (visible dans les logs Vercel) : le
+    // visiteur ne doit rien apprendre de la configuration, mais sans cette
+    // trace un échec d’envoi est indiagnosticable en production.
+    console.error("[contact] échec de l’envoi Resend :", error);
     return NextResponse.json({ error: "send_failed" }, { status: 502 });
   }
 
