@@ -24,9 +24,12 @@ export async function POST(request: Request) {
     );
   }
 
-  // Clés uniquement en variables d’environnement — réponse propre si absentes
-  const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.CONTACT_TO_EMAIL;
+  // Clés uniquement en variables d’environnement — réponse propre si absentes.
+  // `trim` volontaire : un copier-coller de clé ou d’adresse embarque très
+  // souvent une espace ou un retour à la ligne final, que le fournisseur
+  // rejette ensuite avec une erreur peu parlante.
+  const apiKey = process.env.RESEND_API_KEY?.trim();
+  const to = process.env.CONTACT_TO_EMAIL?.trim();
   if (!apiKey || !to) {
     return NextResponse.json({ error: "unconfigured" }, { status: 503 });
   }
@@ -37,7 +40,7 @@ export async function POST(request: Request) {
   let error;
   try {
     ({ error } = await resend.emails.send({
-      from: process.env.CONTACT_FROM_EMAIL ?? "Portfolio <onboarding@resend.dev>",
+      from: process.env.CONTACT_FROM_EMAIL?.trim() || "Portfolio <onboarding@resend.dev>",
       to,
       replyTo: email,
       subject: `[Portfolio] ${subject}`,
