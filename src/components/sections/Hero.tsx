@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import ArrowFillButton from "@/components/ui/arrow-fill-button";
 import { site } from "@/lib/site";
 
 export default function Hero() {
@@ -28,9 +29,7 @@ export default function Hero() {
               {t("subtitle")}
             </p>
             <div className="col-span-12 flex flex-wrap items-center gap-x-8 gap-y-4 animate-rise [animation-delay:240ms] motion-reduce:animate-none md:col-span-5 lg:col-span-5 lg:col-start-8">
-              <a href="#projects" className="btn-primary">
-                {t("ctaProjects")}
-              </a>
+              <ArrowFillButton href="#projects" btnText={t("ctaProjects")} />
               <a href="#contact" className="link-underline font-display text-small font-medium text-ink">
                 {t("ctaContact")}
               </a>
