@@ -196,16 +196,16 @@
         "stack": ["XDR", "Sekoia", "Détection & réponse"]
       },
       {
-        "title": "Plateforme de ticketing from scratch",
-        "context": "Fluidifier les demandes RH et IT du groupe sans multiplier les outils.",
-        "role": "Conception et développement complet, interfaçage EasyRedmine via API REST, automatisation des flux.",
-        "stack": ["Laravel", "API REST", "Automatisation"]
+        "title": "Déploiement NinjaOne",
+        "context": "Corriger les vulnérabilités connues du parc avant qu’elles ne soient exploitées.",
+        "role": "Choix de l’outil, déploiement des agents, politiques de correctifs et suivi de la remédiation.",
+        "stack": ["NinjaOne", "Correctifs", "Vulnérabilités"]
       },
       {
-        "title": "Déploiement ERP Sage X3",
-        "context": "Migrer les processus de gestion critiques du groupe vers un ERP unique.",
-        "role": "États de reporting, migration de données, paramétrage de modules critiques.",
-        "stack": ["ERP", "Sage X3", "Migration"]
+        "title": "Plateforme de ticketing from scratch",
+        "context": "Remplacer un suivi de demandes éclaté par un outil unique, taillé pour les processus du groupe.",
+        "role": "Conception et développement complet, interfaçage EasyRedmine via API REST, automatisation des flux.",
+        "stack": ["Laravel", "API REST", "Automatisation"]
       }
     ]
   },
